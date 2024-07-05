@@ -1,0 +1,11 @@
+FROM ubuntu:24.04
+
+MAINTAINER drigos1er
+
+RUN apt-get update && apt-get  -y install nginx
+
+ADD static-website-example/ /var/www/html/
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
